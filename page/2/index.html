@@ -156,78 +156,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-19-react-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/23/19-react-router/">react-router在开发中的坑</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/23/19-react-router/" class="archive-article-date">
-  	<time datetime="2018-01-23T03:42:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>“react-router-dom”: “^4.2.2”</p>
-<p>具体的代码如下：</p>
-<p>//父组件代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Router, Route &#125; from <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line">&lt;Router <span class="built_in">history</span>=&#123;customHistory&#125;&gt;</span><br><span class="line">    &lt;App&gt;</span><br><span class="line">        &lt;Route exact path=<span class="string">"/"</span> component=&#123;Home&#125;/&gt;</span><br><span class="line">        &lt;Route path=<span class="string">"/city"</span> component=&#123;City&#125;/&gt;</span><br><span class="line">        &lt;Route component=&#123;NotFound&#125;/&gt;</span><br><span class="line">    &lt;/App&gt;</span><br><span class="line">&lt;/Router&gt;</span><br></pre></td></tr></table></figure></p>
-<p>//Home子组件代码</p>
-<link to="/city">
-
-<p>在子组件中点击Link, 浏览器上方的url会改变, 但是页面内容不会更新，若手动刷新页面，内容才会跟更新</p>
-<p>搜到说去掉 App 就可以正常。原因是？若是不去掉需要怎么处理</p>
-        
-          <a class="article-more-a" href="/2018/01/23/19-react-router/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/23/19-react-router/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-18-editor" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -492,6 +420,68 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/11/23/15-system/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-14-optimize" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/23/14-optimize/">性能优化</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/23/14-optimize/" class="archive-article-date">
+  	<time datetime="2017-11-23T04:03:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/23/14-optimize/">展开全文 >></a>
         </p>
       
 
