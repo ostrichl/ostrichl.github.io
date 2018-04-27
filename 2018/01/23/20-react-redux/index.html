@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="ostrichl的博客">
 <meta property="og:description" content="From：http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html redux的思想：    1、web应用是一个状态机，视图与应用一一对应    2、所有的状态，保存在一个对象里面 常用的API    1、store可以看做是一个容器，保存数据的地方，整个应用只能有一个store">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-01-23T09:29:19.000Z">
+<meta property="og:updated_time" content="2018-04-20T09:07:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-redux学习笔记">
 <meta name="twitter:description" content="From：http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html redux的思想：    1、web应用是一个状态机，视图与应用一一对应    2、所有的状态，保存在一个对象里面 常用的API    1、store可以看做是一个容器，保存数据的地方，整个应用只能有一个store">
@@ -180,7 +180,7 @@
       
         <p>From：<a href="http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html</a></p>
 <p>redux的思想：<br>    1、web应用是一个状态机，视图与应用一一对应<br>    2、所有的状态，保存在一个对象里面</p>
-<p>常用的API<br>    1、store可以看做是一个容器，保存数据的地方，整个应用只能有一个store<br>        createStore用来生成store</p>
+<p>常用的API<br>    1、store可以看做是一个容器，保存数据的地方，整个应用只能有一个store<br>        createStore用来生成store<br>        store.getState 获取组件<br>        stroe.dispatch 修改组件</p>
 <pre><code>2、state
     store对象包含所有数据，state相当于是store的快照
     当前的state，用store.getState拿到
@@ -200,6 +200,15 @@
 <pre><code>6、reducer
     store收到action后给出一个新的state，view才有变化，stated的计算过程叫reducer
     reducer是一个函数，接收action和当前的state,返回一个新的state
+    描述程序会根据action发生什么变化
+    为了避免不必要的渲染，对reducer产生前后的state进行对比 要求：reducer是一个纯函数，返回是一个object，不能更改reducer参数，通过对比state是否相等决定是否重新render
+
+
+7、dispatch
+    管理state，负责数据的修改，不能任意修改state
+
+8、createStore 
+    生成store 订阅数据改变，render APP,为观察者模式
 </code></pre>
       
 

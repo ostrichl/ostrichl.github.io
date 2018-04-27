@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>react-router在开发中的坑 | ostrichl的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="“react-router-dom”: “^4.2.2” 具体的代码如下： //父组件代码123456789import &amp;#123; Router, Route &amp;#125; from &apos;react-router-dom&apos;&amp;lt;Router history=&amp;#123;customHistory&amp;#125;&amp;gt;    &amp;lt;App&amp;gt;        &amp;lt;Route exact p">
+  <meta name="description" content="react-router和react-router-dom的区别 react-routr-dom基于react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react-router在开发中的坑">
 <meta property="og:url" content="http://yoursite.com/2018/01/23/19-react-router/index.html">
 <meta property="og:site_name" content="ostrichl的博客">
-<meta property="og:description" content="“react-router-dom”: “^4.2.2” 具体的代码如下： //父组件代码123456789import &amp;#123; Router, Route &amp;#125; from &apos;react-router-dom&apos;&amp;lt;Router history=&amp;#123;customHistory&amp;#125;&amp;gt;    &amp;lt;App&amp;gt;        &amp;lt;Route exact p">
+<meta property="og:description" content="react-router和react-router-dom的区别 react-routr-dom基于react">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-01-23T08:36:37.000Z">
+<meta property="og:updated_time" content="2018-04-25T08:28:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-router在开发中的坑">
-<meta name="twitter:description" content="“react-router-dom”: “^4.2.2” 具体的代码如下： //父组件代码123456789import &amp;#123; Router, Route &amp;#125; from &apos;react-router-dom&apos;&amp;lt;Router history=&amp;#123;customHistory&amp;#125;&amp;gt;    &amp;lt;App&amp;gt;        &amp;lt;Route exact p">
+<meta name="twitter:description" content="react-router和react-router-dom的区别 react-routr-dom基于react">
   
     <link rel="alternative" href="/atom.xml" title="ostrichl的博客" type="application/atom+xml">
   
@@ -178,15 +178,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>“react-router-dom”: “^4.2.2”</p>
+        <p>react-router和react-router-dom的区别</p>
+<p>react-routr-dom基于react</p>
+<a id="more"></a>
+<p>“react-router-dom”: “^4.2.2”</p>
 <p>具体的代码如下：</p>
 <p>//父组件代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Router, Route &#125; from <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line">&lt;Router <span class="built_in">history</span>=&#123;customHistory&#125;&gt;</span><br><span class="line">    &lt;App&gt;</span><br><span class="line">        &lt;Route exact path=<span class="string">"/"</span> component=&#123;Home&#125;/&gt;</span><br><span class="line">        &lt;Route path=<span class="string">"/city"</span> component=&#123;City&#125;/&gt;</span><br><span class="line">        &lt;Route component=&#123;NotFound&#125;/&gt;</span><br><span class="line">    &lt;/App&gt;</span><br><span class="line">&lt;/Router&gt;</span><br></pre></td></tr></table></figure></p>
 <p>//Home子组件代码</p>
 <link to="/city">
 
-<p>在子组件中点击Link, 浏览器上方的url会改变, 但是页面内容不会更新，若手动刷新页面，内容才会跟更新</p>
-<p>搜到说去掉 App 就可以正常。原因是？若是不去掉需要怎么处理</p>
-<a id="more"></a>
+<p>在子组件中点击Link, 浏览器上方的url会改变, 但是页面内容不会更新，若手动刷新页面，内容才会跟更新<br>搜到说去掉 App 就可以正常。原因是？若是不去掉需要怎么处理</p>
 <p>看到一个简书里一个博客里记录的坑</p>
 <p><a href="https://www.jianshu.com/p/e2277aaa53f1" target="_blank" rel="noopener">https://www.jianshu.com/p/e2277aaa53f1</a> 总结的很全面 Mark一下</p>
 <p>1.包的选择<br>react router v4 是对v3的重写。现在分为三个包：</p>

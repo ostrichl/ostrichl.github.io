@@ -156,6 +156,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-09-jQuery prop&amp;attr" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/16/09-jQuery prop&attr/">jQuery中attr和prop</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/16/09-jQuery prop&attr/" class="archive-article-date">
+  	<time datetime="2017-11-16T11:39:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>jQuery从1.6.0开始支持prop</p>
+<p>在1.6之前attr会出现不一致行为</p>
+<p>根据官方的建议：具有 true 和 false 两个属性的属性，如 checked, selected 或者 disabled 使用prop()，其他的使用 attr()</p>
+<p>源码需要后面自己再研究下附上理解</p>
+<p>首先，我们看下 attr() 和 prop() 的区别：</p>
+<p>attr() 里面，最关键的两行代码</p>
+<p>elem.setAttribute( name, value + “” );</p>
+<p>ret =  elem.getAttribute( name );<br>很明显的看出来，使用的 DOM 的 API setAttribute() 和 getAttribute() 方法操作的属性元素节点。</p>
+<p>prop() 里面，最关键的两行代码</p>
+<p>return ( elem[ name ] = value );</p>
+<p>return elem[ name ];<br>可以理解为 document.getElementById(el)[name] = value，这是转化成 element 的一个属性。</p>
+<p>对比调试 1.9.0 和 1.8.3 的 attr() 方法，发现两者的区别在于<br>
+        
+          <a class="article-more-a" href="/2017/11/16/09-jQuery prop&attr/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/16/09-jQuery prop&attr/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-08-closure" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -402,82 +478,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/10/26/05-backbone/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-04-daliy-remark" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/12/04-daliy-remark/">小知识积累</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/12/04-daliy-remark/" class="archive-article-date">
-  	<time datetime="2017-10-12T02:15:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>都是知识点，有没有！</p>
-<h3 id="1-jQuery-noop"><a href="#1-jQuery-noop" class="headerlink" title="1.jQuery.noop"></a>1.jQuery.noop</h3><pre><code>传入一个空函数作为参数，返回一个空数组。
-此方法不接受任何参数，比如当插件提供了一个可选的回调函数接口，那么如果调用的时候没有传递这个回调函数，就用$.noop来代替执行。
-
-$.noop() 函数是一个空函数
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    var result = $.map( [1, 2, 3], $.noop );</span><br><span class="line">    document.writeln( result.length );   // 0</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="2-数组去重"><a href="#2-数组去重" class="headerlink" title="2.数组去重"></a>2.数组去重</h3><pre><code>#### 1)es6
-    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,1,1,12,3,5]</span><br><span class="line">[...new Set(arr)]</span><br></pre></td></tr></table></figure>
-
-#### 2)hashTable
-</code></pre>
-        
-          <a class="article-more-a" href="/2017/10/12/04-daliy-remark/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/12/04-daliy-remark/">展开全文 >></a>
         </p>
       
 
